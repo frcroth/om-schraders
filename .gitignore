@@ -1,0 +1,4 @@
+env
+*.pdf
+*.xml
+__pycache__
