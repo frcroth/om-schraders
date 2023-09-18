@@ -30,9 +30,7 @@ def meta():
     <canteen>
     <name>Schraders Bistro</name>
     <address>August-Bebel-Straße 26–53 14482 Potsdam</address>
-    <coordinates lat="52.387832" lng="13.121451"/>
     <availability>public</availability>
-    <city>Potsdam</city>
     <feed name="full">
         <url>https://openmensa.scm.io/feed</url>
         <schedule dayOfMonth="*" dayOfWeek="1" hour="8"/>
