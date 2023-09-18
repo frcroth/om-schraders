@@ -8,7 +8,6 @@ from pyopenmensa.feed import LazyBuilder
 days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
 
 
-
 def get_text_until_next_day(pdf, day_label):
     query = f"LTTextLineHorizontal:contains('{day_label}')"
     day_element = pdf.pq(query)[0]
@@ -98,35 +97,3 @@ def parse_pdf():
 
 if __name__ == "__main__":
     print(parse_pdf())
-
-# TODO: Prices
-# TODO: Download pdf
-
-
-
-# Old parsing
-# def get_foods_for_day_label(pdf, day_label):
-#     query = f"LTTextLineHorizontal:contains('{day_label}')"
-#     day_element = pdf.pq(query)[0]
-
-#     def is_food_entry(element):
-#         try:
-#             children = element.getchildren()
-#             if "Üblich" in children[0].text:
-#                 return False
-#             if "7,0" in children[0].text or "8,0" in children[0].text:
-#                 return False
-#             return True
-#         except Exception:
-#             return False
-
-#     next_element = day_element.getnext()
-#     while not is_food_entry(next_element):
-#         next_element = next_element.getnext()
-
-#     def strip_meal_entry(meal_entry: str):
-#         if meal_entry.startswith("- "):
-#             return meal_entry[2:].strip()
-#         return meal_entry.strip()
-
-#     return [strip_meal_entry(child.text) for child in next_element.getchildren()]
