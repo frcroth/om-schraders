@@ -7,4 +7,9 @@ To run it locally, follow these steps:
 2. Run the server with `python -m flask --app openmensa_server run`
 3. Navigate to `localhost:5000/feed`
 
-You can also build the docker image and deploy it.
+You can also run the docker container locally:
+
+```shell
+docker build -t openmensa-schrader .
+docker run -p 5000:5000 openmensa-schrader
+```
